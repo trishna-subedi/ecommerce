@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - EcoMart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/payment.css" />
+    <link rel="stylesheet" href="assets/css/checkout.css" />
+  </head>
+  <body>
+    <header id="main-header" class="header-complex">
+      <!-- Utility Bar -->
+      <div class="header-top">
+        <div class="container header-top-flex">
+          <div class="util-links left">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                />
+              </svg>
+              CUSTOMER SUPPORT</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v.958m12 0a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25m12 0H3.375"
+                />
+              </svg>
+              TRACK ORDER</a
+            >
+          </div>
+          <div class="util-links right">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                />
+              </svg>
+              SIGN IN / REGISTER</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                />
+              </svg>
+              WISHLIST</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Action Bar -->
+      <div class="header-main">
+        <div class="container header-main-flex">
+          <a href="index.html" class="logo">EcoMart</a>
+          <div class="search-wrapper">
+            <div class="search-category">
+              <span>All Categories</span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search EcoMart products..."
+            />
+            <button class="search-btn" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="header-main-actions">
+            <a
+              href="checkout.html"
+              id="cart-btn"
+              class="header-icon"
+              aria-label="Open Cart"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="28"
+                height="28"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l1.823-6.811a1.5 1.5 0 00-1.087-1.835H4.218a1.5 1.5 0 00-1.087 1.835l1.823 6.811zM17.25 9.75h-9.75"
+                />
+              </svg>
+              <span id="cart-count" class="badge">0</span>
+            </a>
+          </div>
+          <button
+            id="mobile-menu-btn"
+            class="mobile-toggle"
+            aria-label="Open Menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <!-- Primary Navigation -->
+    </header>
+
+    <main class="checkout-page">
+      <div class="container">
+        <div class="checkout-layout-grid">
+          <!-- Column 1: Cart Items -->
+          <div class="checkout-main">
+            <h1 class="checkout-title">Review Your Cart</h1>
+            <div id="cart-items-container" class="cart-items-list">
+              <!-- Cart items are injected here. The empty message is a permanent fallback. -->
+              <div class="cart-empty-message">
+                <h3>Your cart is currently empty.</h3>
+                <p>
+                  Explore our collections and find your next favorite
+                  eco-friendly gadget!
+                </p>
+                <a href="index.html" class="cta-button">Continue Shopping</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Order Summary -->
+          <div class="checkout-summary">
+            <div class="summary-sticky-content">
+              <h2 class="summary-title">Order Summary</h2>
+              <div class="summary-details">
+                <div class="summary-line">
+                  <span>Subtotal</span><span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-line">
+                  <span>Shipping</span><span id="summary-shipping">$0.00</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-line total">
+                  <span>Total</span><span id="summary-total">$0.00</span>
+                </div>
+              </div>
+              <!-- CORRECTED: Only one 'a' tag now, which is the correct element for this flow. -->
+              <a
+                href="payment.html"
+                id="proceed-to-payment-btn"
+                class="place-order-btn disabled"
+                >Proceed to Payment</a
+              >
+              <!-- DELETED: Redundant and conflicting <button> has been removed. -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h4 class="footer-heading">EcoMart</h4>
+          <p class="footer-text">
+            Future-forward, earth-friendly. Your go-to store for cutting-edge,
+            sustainable technology products.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="checkout.html">Cart</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">Join Our Newsletter</h4>
+          <p class="footer-text">
+            Get exclusive deals and updates on the latest green tech.
+          </p>
+          <form
+            class="newsletter-form"
+            onsubmit="event.preventDefault(); alert('Subscribed!');"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+              class="newsletter-input"
+            /><button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 EcoMart. All rights reserved. A demonstration project.
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/checkout.js" defer></script>
+  </body>
+</html>

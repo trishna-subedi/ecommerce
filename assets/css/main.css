@@ -1,0 +1,704 @@
+/* =======================================================
+   EcoMart: Main Stylesheet (main.css)
+   =======================================================
+   This file contains global styles for the entire site,
+   including typography, variables, and shared components
+   like the Header and Footer.
+   ======================================================= */
+
+/* --- 1. CSS Variables & Basic Resets --- */
+:root {
+  --primary-color: #2563eb; /* A vibrant, modern blue */
+  --secondary-color: #10b981; /* Eco-friendly green for accents */
+  --dark-color: #1f2937; /* For text and dark backgrounds */
+  --light-color: #f9fafb; /* For light backgrounds */
+  --text-color: #374151;
+  --text-light: #6b7280;
+  --border-color: #e5e7eb;
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem; /* 24px */
+}
+
+/* --- 2. Global Header Styles --- */
+.header {
+  position: fixed; /* Changed to fixed for the overlay effect */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 80px;
+  background-color: transparent; /* Starts transparent */
+  transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out;
+  border-bottom: 1px solid transparent; /* Transparent border for smooth transition */
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* This class will be added via JavaScript on scroll */
+.header.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-family: var(--font-primary);
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* When header is transparent, logo needs to be white to be visible */
+.header:not(.scrolled) .logo {
+  color: #ffffff;
+}
+
+/* --- 3. Desktop Navigation & Actions --- */
+.nav-desktop {
+  display: none; /* Hidden on mobile by default */
+}
+
+.nav-desktop a {
+  font-family: var(--font-primary);
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 1rem; /* 16px */
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect for nav links */
+.nav-desktop a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-desktop a:hover {
+  color: var(--primary-color);
+}
+
+.nav-desktop a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* When header is transparent, nav links need to be white */
+.header:not(.scrolled) .nav-desktop a {
+  color: #ffffff;
+}
+.header:not(.scrolled) .nav-desktop a:hover {
+  color: #ffffff; /* Keep it white on hover, the underline is enough */
+}
+
+.header-actions {
+  display: none; /* Hidden on mobile by default */
+  align-items: center;
+  gap: 0.75rem; /* 12px */
+}
+
+.header-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem; /* 24px */
+  color: var(--text-color);
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-icon:hover {
+  color: var(--primary-color);
+}
+
+/* When header is transparent, icons need to be white */
+.header:not(.scrolled) .header-icon {
+  color: #ffffff;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  transform: translate(25%, -25%);
+}
+
+/* --- 4. Mobile Navigation & Toggle --- */
+.mobile-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.75rem; /* 28px */
+  color: var(--dark-color);
+}
+
+/* When header is transparent, mobile toggle needs to be white */
+.header:not(.scrolled) .mobile-toggle {
+  color: #ffffff;
+}
+
+/* --- 5. Responsive Media Queries --- */
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+  .header-actions {
+    display: flex;
+  }
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* --- 6. Mobile Navigation Overlay Styles --- */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 2000;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobile-nav-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-overlay.is-open .mobile-nav-content {
+  transform: translateX(0); /* Slide into view */
+}
+
+.mobile-nav-content .close-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 2.5rem; /* 40px */
+  line-height: 1;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem; /* Space down from the close button */
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-primary);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: var(--dark-color);
+  text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.mobile-nav-actions {
+  margin-top: auto; /* Pushes this section to the bottom */
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.mobile-nav-actions p {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-actions .header-icon {
+  display: flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem; /* Smaller text size for menu items */
+  padding: 1rem;
+  color: var(--dark-color);
+  border-radius: 8px;
+}
+
+.mobile-nav-actions .header-icon:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+.mobile-nav-actions .badge {
+  margin-left: auto; /* Push badge to the far right */
+}
+
+/* --- 7. Global Footer Styles --- */
+.footer {
+  background-color: var(--dark-color);
+  color: #e5e7eb; /* A light gray for better readability than pure white */
+  padding: 4rem 0 0 0; /* 64px top padding, no bottom padding yet */
+  font-family: var(--font-secondary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  gap: 2.5rem; /* 40px */
+  padding-bottom: 3rem; /* 48px */
+}
+
+.footer-column .footer-heading {
+  font-family: var(--font-primary);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.footer-text {
+  font-size: 0.95rem; /* 15px */
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+  color: #d1d5db; /* A slightly darker gray */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+.footer-links a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  padding-left: 5px; /* Subtle indent effect on hover */
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 0.85rem 1rem; /* 14px 16px */
+  background-color: #374151; /* A shade lighter than the footer bg */
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-input::placeholder {
+  color: #9ca3af;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+.newsletter-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.newsletter-btn:hover {
+  background-color: #1d4ed8; /* Darker blue */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 1.5rem 0; /* 24px */
+  text-align: center;
+  border-top: 1px solid #374151; /* A subtle separator line */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.875rem; /* 14px */
+  color: #9ca3af;
+}
+
+/* --- 8. Responsive Adjustments for Footer --- */
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
+  .newsletter-form {
+    display: block; /* On desktop, input and button can be on the same line if desired, but this stacked look is modern */
+  }
+}
+
+.badge.updated {
+  animation: pop 0.3s ease-out;
+}
+@keyframes pop {
+  0% {
+    transform: translate(25%, -25%) scale(1);
+  }
+  50% {
+    transform: translate(25%, -25%) scale(1.3);
+  }
+  100% {
+    transform: translate(25%, -25%) scale(1);
+  }
+}
+
+/* =======================================================
+   --- [NEW] STATE-OF-THE-ART HEADER STYLES ---
+   ======================================================= */
+
+.header-complex {
+  /* This is the main parent container */
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Header Top (Utility Bar) --- */
+.header-top {
+  background-color: #333;
+  color: #f5f5f5;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+.header-top-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.util-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.util-links a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+.util-links a:hover {
+  color: #f97316;
+} /* Orange accent */
+.util-links svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Header Main (Action Bar) --- */
+.header-main {
+  padding: 1.25rem 0;
+}
+.header-main-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.header-main .logo {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.header-main-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-main-actions .header-icon {
+  color: #333;
+  position: relative;
+}
+.header-main-actions .badge {
+  background-color: #f97316;
+} /* Orange badge */
+
+/* --- Advanced Search Wrapper --- */
+.search-wrapper {
+  flex-grow: 1;
+  max-width: 600px;
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.search-category {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background-color: #f5f5f5;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.search-category svg {
+  width: 16px;
+  height: 16px;
+}
+.search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-btn {
+  background-color: #f97316;
+  border: none;
+  color: white;
+  padding: 0 1.5rem;
+  cursor: pointer;
+}
+.search-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+.primary-nav { 
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Add bottom border for balance */
+}
+
+.primary-nav-flex { 
+    display: flex; 
+    align-items: center; 
+    /* [FIX] This is the key change to create left/right sections. */
+    justify-content: space-between; 
+    height: 50px; 
+}
+
+.primary-nav-links { 
+    display: flex; 
+    gap: 2.5rem; 
+}
+
+.primary-nav-links a { 
+    font-weight: 600; 
+    color: #333; 
+    font-size: 14px;
+    text-decoration: none; 
+    position: relative; 
+    letter-spacing: 0.5px; /* Adds a more premium feel */
+}
+
+.primary-nav-links a::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
+    left: 0; 
+    width: 100%; 
+    height: 2px; 
+    background-color: #f97316; /* Orange accent */
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+.primary-nav-links a:hover::after { transform: scaleX(1); }
+
+/* Hide the main hamburger button on desktop by default */
+/* .mobile-nav-toggle-main { display: ; } */
+
+/* --- Promotion Bar --- */
+.promotion-bar {
+  background-color: #8fa88b; /* Sage green from image */
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+    .header-top, .primary-nav-links, .search-wrapper, .header-main-actions a:not(#cart-btn) {
+        display: none; /* Hide desktop links and elements */
+    }
+    
+    .header-main-flex {
+        justify-content: space-between;
+    }
+    
+
+
+
+
+    .header-main-actions {
+        display: flex;
+    }
+}
+
+.mobile-nav-secondary {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+.mobile-nav-secondary a {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+.mobile-nav-toggle-main {
+
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 10px; /* Add padding for a larger click area */
+}
+
+.hamburger-box {
+    width: 25px; /* Width of the icon */
+    height: 24px; /* Height of the icon */
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 100%;
+    height: 3px; /* Thickness of the bars */
+    background-color: var(--dark-color);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1.5px; /* (height / -2) */
+}
+
+.hamburger-inner::before {
+    top: -10px; /* Spacing between bars */
+}
+
+.hamburger-inner::after {
+    bottom: -10px; /* Spacing between bars */
+}

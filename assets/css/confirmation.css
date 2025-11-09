@@ -1,0 +1,94 @@
+/* =======================================================
+   EcoMart: Confirmation Page Stylesheet (confirmation.css)
+   Version: State-of-the-Art
+   ======================================================= */
+
+.confirmation-page {
+    padding: 120px 0 5rem 0;
+    background-color: var(--light-color);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.confirmation-box {
+    background-color: #ffffff;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* --- [NEW] Animation Base Styles --- */
+[data-animation] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animation="fade-in-up"] { transform: translateY(20px); }
+[data-animation].is-visible { opacity: 1; transform: translateY(0); }
+
+/* --- [NEW] Animated Checkmark Icon --- */
+.confirmation-icon { margin-bottom: 1.5rem; }
+.checkmark { width: 80px; height: 80px; border-radius: 50%; display: inline-block; }
+.checkmark-circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke-width: 3; stroke-miterlimit: 10; stroke: var(--secondary-color); fill: none; }
+.checkmark-check { stroke-dasharray: 48; stroke-dashoffset: 48; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke: var(--secondary-color); fill: none; }
+
+[data-animation="pop-in"].is-visible .checkmark-circle { animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.2s forwards; }
+[data-animation="pop-in"].is-visible .checkmark-check { animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards; }
+
+@keyframes stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+.confirmation-box h2 { font-family: var(--font-primary); font-size: 2rem; color: var(--dark-color); margin: 0 0 0.75rem 0; }
+.confirmation-box p { font-size: 1.1rem; color: var(--text-light); margin: 0 0 2rem 0; }
+.confirmation-box strong { color: var(--dark-color); }
+
+.order-summary-box { text-align: left; background-color: var(--light-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2.5rem; }
+.order-summary-box h3 { margin: 0 0 1rem 0; font-size: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+.order-items-summary { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+
+/* --- [NEW] Interactive Summary Item --- */
+.summary-item { display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border-radius: 8px; transition: transform 0.3s ease, background-color 0.3s ease; }
+.summary-item:hover { transform: scale(1.02); background-color: #ffffff; }
+.summary-item-img { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; }
+.summary-item-details { flex-grow: 1; }
+.summary-item-title { font-weight: 600; margin: 0; }
+.summary-item-qty { color: var(--text-light); font-size: 0.9rem; margin: 0.2rem 0 0 0; }
+.summary-item-price { font-weight: 600; }
+
+.summary-line.total { display:flex; justify-content:space-between; border-top:1px solid var(--border-color); padding-top:1.5rem; font-size: 1.2rem;}
+
+/* --- [NEW] Dual Call-to-Action Buttons --- */
+.confirmation-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+.cta-button.primary { background-color: var(--primary-color); color: #ffffff; }
+.cta-button.secondary { background-color: var(--light-color); color: var(--primary-color); border: 1px solid var(--border-color); }
+.cta-button.secondary:hover { background-color: #ffffff; border-color: var(--primary-color); }
+
+
+
+.place-order-btn {
+
+
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}

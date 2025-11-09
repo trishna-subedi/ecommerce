@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoMart - Sustainable Electronics & Computing</title>
+
+    <!-- Google Fonts (Optional, but recommended for better typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Our CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Global styles for header, footer, etc. -->
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <!-- Styles specific to the home page -->
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Our JavaScript Files -->
+    <!-- 'defer' ensures the HTML is loaded before the scripts run -->
+    <script src="assets/js/data.js" defer></script>
+    <!-- Mock product and review data -->
+    <script src="assets/js/main.js" defer></script>
+    <!-- Logic for cart, wishlist, sidebars -->
+    <script src="assets/js/home.js" defer></script>
+    <!-- Home page specific logic -->
+  </head>
+  <body>
+    <header id="main-header" class="header-complex">
+      <!-- ============== HEADER TOP (UTILITY BAR) ============== -->
+      <div class="header-top">
+        <div class="container header-top-flex">
+          <div class="util-links left">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                />
+              </svg>
+              CUSTOMER SUPPORT</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v.958m12 0a2.25 2.5 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25m12 0H3.375"
+                />
+              </svg>
+              TRACK ORDER</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                />
+              </svg>
+              STORE LOCATOR</a
+            >
+          </div>
+          <div class="util-links right">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                />
+              </svg>
+              SIGN IN / REGISTER</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                />
+              </svg>
+              WISHLIST</a
+            >
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.691L7.985 5.964m0 0a8.25 8.25 0 0111.667 0l3.181 3.183"
+                />
+              </svg>
+              RECENTLY VIEWED</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== HEADER MAIN (ACTION BAR) ============== -->
+      <div class="header-main">
+        <div class="container header-main-flex">
+          <a href="index.html" class="logo">
+            <!-- If you have an image logo, place it here -->
+            EcoMart
+          </a>
+
+          <div class="search-wrapper">
+            <div class="search-category">
+              <span>All Categories</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search EcoMart products..."
+            />
+            <button class="search-btn" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="header-main-actions">
+            <a href="#" class="header-icon" aria-label="Wishlist"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="28"
+                height="28"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                /></svg
+            ></a>
+            <a href="#" class="header-icon" aria-label="Account"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="28"
+                height="28"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                /></svg
+            ></a>
+            <a
+              href="checkout.html"
+              id="cart-btn"
+              class="header-icon"
+              aria-label="Open Cart"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="28"
+                height="28"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l1.823-6.811a1.5 1.5 0 00-1.087-1.835H4.218a1.5 1.5 0 00-1.087 1.835l1.823 6.811zM17.25 9.75h-9.75"
+                />
+              </svg>
+              <span id="cart-count" class="badge">0</span>
+            </a>
+          </div>
+          <button
+            id="mobile-menu-btn"
+            class="mobile-toggle"
+            aria-label="Open Menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- ============== PRIMARY NAVIGATION ============== -->
+      <nav class="primary-nav">
+        <div class="container primary-nav-flex">
+          <button
+            class="mobile-nav-toggle-main"
+            aria-label="Open Navigation Menu"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <div class="primary-nav-links">
+            <a href="#">COLLECTIONS</a>
+            <a href="#">NEW ARRIVALS</a>
+            <a href="#">BESTSELLERS</a>
+            <a href="#">SELL WITH US</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ============== PROMOTION BAR ============== -->
+      <div class="promotion-bar">
+        ENJOY COMPLIMENTARY WORLDWIDE SHIPPING ON ALL ORDERS
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-background-wrapper">
+          <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="assets/videos/herosection.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content container">
+          <h2 class="animate-fade-in-up">Future-Forward. Earth-Friendly.</h2>
+          <p class="animate-fade-in-up delay-200">
+            Discover cutting-edge electronics and computing solutions,
+            thoughtfully crafted for a sustainable world.
+          </p>
+
+          <!-- [NEW] State-of-the-Art Call-to-Action Button -->
+          <a href="#products" class="cta-button animate-fade-in-up delay-400">
+            <span class="cta-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+            </span>
+            <span class="cta-text">Shop Our Green Tech</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="seller-specials" class="seller-specials">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="section-title">Today's Seller Specials</h3>
+            <div class="specials-navigation">
+              <div class="swiper-pagination specials-pagination"></div>
+              <div class="swiper-button-prev specials-prev"></div>
+              <div class="swiper-button-next specials-next"></div>
+            </div>
+          </div>
+
+          <div class="swiper specials-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides will be injected here by home.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Collections -->
+      <!-- Featured Collections -->
+      <!-- Featured Collections -->
+      <section id="featured-collections" class="featured-collections">
+        <div class="container">
+          <h3 class="section-title">Shop By Collection</h3>
+
+          <div class="swiper collections-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1: Electronics -->
+              <div class="swiper-slide collection-card">
+                <img
+                  src="assets/images/1a.jpg"
+                  alt="Eco-friendly Electronics"
+                  class="collection-card-bg"
+                />
+                <div class="collection-card-overlay"></div>
+                <div class="collection-card-content">
+                  <h4 class="collection-title">Eco-Electronics</h4>
+                  <p class="collection-subtitle">Tech for a better tomorrow.</p>
+                  <a href="#products" class="collection-link">
+                    <span class="collection-link-text">Explore Now</span>
+                    <span class="collection-link-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 2: Computing -->
+              <div class="swiper-slide collection-card">
+                <img
+                  src="assets/images/5a.jpg"
+                  alt="Green Computing"
+                  class="collection-card-bg"
+                />
+                <div class="collection-card-overlay"></div>
+                <div class="collection-card-content">
+                  <h4 class="collection-title">Green Computing</h4>
+                  <p class="collection-subtitle">
+                    Powerful, efficient, responsible.
+                  </p>
+                  <a href="#products" class="collection-link">
+                    <span class="collection-link-text">Explore Now</span>
+                    <span class="collection-link-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 3: Audio -->
+              <div class="swiper-slide collection-card">
+                <img
+                  src="assets/images/6a.jpg"
+                  alt="Sustainable Audio Gear"
+                  class="collection-card-bg"
+                />
+                <div class="collection-card-overlay"></div>
+                <div class="collection-card-content">
+                  <h4 class="collection-title">Sustainable Audio</h4>
+                  <p class="collection-subtitle">Pure sound, pure materials.</p>
+                  <a href="#products" class="collection-link">
+                    <span class="collection-link-text">Explore Now</span>
+                    <span class="collection-link-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="swiper-slide collection-card">
+                <img
+                  src="assets/images/12a.jpg"
+                  alt="Sustainable Audio Gear"
+                  class="collection-card-bg"
+                />
+                <div class="collection-card-overlay"></div>
+                <div class="collection-card-content">
+                  <h4 class="collection-title">Headsets</h4>
+                  <p class="collection-subtitle">Pure sound, pure materials.</p>
+                  <a href="#products" class="collection-link">
+                    <span class="collection-link-text">Explore Now</span>
+                    <span class="collection-link-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination & Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <!-- Products Section -->
+      <section id="products" class="products">
+        <div class="container">
+          <h3 class="section-title">Our Products</h3>
+
+          <!-- Filter Buttons -->
+          <div id="filter-buttons" class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="electronics">
+              Electronics
+            </button>
+            <button class="filter-btn" data-category="computing">
+              Computing
+            </button>
+            <button class="filter-btn" data-category="audio">Audio</button>
+            <!-- We can add more buttons here if we add more categories -->
+          </div>
+
+          <!-- Product Grid -->
+          <!-- Product cards will be dynamically injected here by home.js -->
+          <div id="product-grid" class="product-grid">
+            <!-- Example of a single product card structure (for reference):
+            <div class="product-card">
+                <div class="product-card-image">
+                    <a href="product.html?id=PRODUCT_ID">
+                        <img src="path/to/image.jpg" alt="Product Name">
+                    </a>
+                    <div class="product-card-actions">
+                        <button class="action-btn wishlist-btn" aria-label="Add to Wishlist">❤️</button>
+                        <button class="action-btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card-info">
+                    <p class="product-category">Category</p>
+                    <h4 class="product-title"><a href="product.html?id=PRODUCT_ID">Product Name</a></h4>
+                    <p class="product-price">$99.99</p>
+                </div>
+            </div>
+            -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================= -->
+    <!-- FOOTER (Will be consistent across all pages) -->
+    <!-- ======================================================= -->
+    <!-- ======================================================= -->
+    <!-- FOOTER (Will be consistent across all pages) -->
+    <!-- ======================================================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Column 1: About EcoMart -->
+        <div class="footer-column">
+          <h4 class="footer-heading">EcoMart</h4>
+          <p class="footer-text">
+            Future-forward, earth-friendly. Your go-to store for cutting-edge,
+            sustainable technology products.
+          </p>
+          <div class="footer-socials">
+            <!-- Add social links here if desired -->
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#featured-collections">Collections</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Support -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Join Our Newsletter</h4>
+          <p class="footer-text">
+            Get exclusive deals and updates on the latest green tech.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 EcoMart. All rights reserved. A demonstration project.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Our JavaScript Files -->
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/home.js" defer></script>
+  </body>
+</html>
