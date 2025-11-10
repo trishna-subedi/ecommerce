@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div id="review-form-container" class="review-form-container">
                     <form id="review-form" class="review-form" novalidate>
-                            <p class="form-instruction">Your email address will not be published.</p>
+  
                             <div class="form-group-stars">
                             <label>Your rating</label>
                             <div class="star-rating-input">
@@ -433,28 +433,40 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+
     if (starRatingInput) {
-      const stars = Array.from(starRatingInput.children).reverse(); // Reverse to handle hover correctly
-      starRatingInput.addEventListener("mouseover", (e) => {
-        const hoverValue = e.target.dataset.value;
-        if (!hoverValue) return;
-        stars.forEach((star) => {
-          star.textContent = star.dataset.value <= hoverValue ? "★" : "☆";
-        });
-      });
+        const stars = Array.from(starRatingInput.children); // No longer need to reverse here
 
-      starRatingInput.addEventListener("mouseout", () => {
-        const selectedValue = ratingValueInput.value;
-        stars.forEach((star) => {
-          star.textContent = star.dataset.value <= selectedValue ? "★" : "☆";
-        });
-      });
+        // Create a single, reliable function for visual updates
+        const updateStarsVisual = (ratingValue) => {
+            stars.forEach(star => {
+                // The stars are in order 5, 4, 3, 2, 1 in the HTML.
+                // So, a star should be filled if its value is LESS THAN OR EQUAL to the rating.
+                star.textContent = star.dataset.value <= ratingValue ? '★' : '☆';
+            });
+        };
 
-      starRatingInput.addEventListener("click", (e) => {
-        const selectedValue = e.target.dataset.value;
-        if (!selectedValue) return;
-        ratingValueInput.value = selectedValue;
-      });
+        starRatingInput.addEventListener("mouseover", (e) => {
+            const hoverValue = e.target.dataset.value;
+            if (hoverValue) {
+                updateStarsVisual(hoverValue); // Update visuals on hover
+            }
+        });
+
+        starRatingInput.addEventListener("mouseout", () => {
+            // On mouseout, revert the visuals to the actual stored value
+            updateStarsVisual(ratingValueInput.value); 
+        });
+
+        starRatingInput.addEventListener("click", (e) => {
+            const selectedValue = e.target.dataset.value;
+            if (selectedValue) {
+                // Set the hidden input's value
+                ratingValueInput.value = selectedValue;
+                // And permanently update the visuals to match the click
+                updateStarsVisual(selectedValue);
+            }
+        });
     }
 
     if (reviewForm) {

@@ -90,7 +90,128 @@ const products = [
             ]
         }
     },
-    // ... We will add more products here later
+    // new 
+        {
+        id: 'eco-ewwlwec-002',
+        name: 'Helios Solar-Panel Power Bank',
+        price: 59.99,
+        originalPrice: 79.99,
+        category: 'electronics',
+        stockStatus: 'in-stock',
+        avgRating: 4.6,
+        shortDescription: 'Charge your devices anywhere with the power of the sun.',
+        description: `Never run out of battery again with the Helios Solar-Panel Power Bank. Featuring high-efficiency solar panels and a rugged, splashproof design, this 10,000mAh power bank is your perfect companion for hiking, camping, or daily commutes. It includes dual USB-A ports and a USB-C port for versatile charging.`,
+        specifications: [
+            { key: 'Capacity', value: '10,000mAh' },
+            { key: 'Ports', value: '2x USB-A, 1x USB-C' },
+            { key: 'Features', value: 'Integrated LED Flashlight, Splashproof IPX4' },
+            { key: 'Materials', value: 'Recycled ABS, High-Efficiency Solar Cells' }
+        ],
+        image: {
+            thumbnail: 'assets/images/prod-04-powerbank-thumb.jpg',
+            gallery: [
+                'assets/images/prod-04-powerbank-gallery-1.jpg',
+                'assets/images/prod-04-powerbank-gallery-2.jpg'
+            ]
+        }
+    },
+    {
+        id: 'audiwwwo-002',
+        name: 'EchoWood Over-Ear Headphones',
+        price: 179.00,
+        originalPrice: 229.00,
+        category: 'audio',
+        stockStatus: 'in-stock',
+        avgRating: 4.9,
+        shortDescription: 'Studio-quality sound encased in certified sustainable wood.',
+        description: `Immerse yourself in unparalleled audio fidelity with the EchoWood Headphones. The earcups are crafted from FSC-certified walnut wood, providing natural acoustic resonance. With plush, comfortable earpads and a 40-hour battery life, these headphones are designed for the discerning audiophile who values both quality and sustainability.`,
+        specifications: [
+            { key: 'Driver Size', value: '50mm Neodymium' },
+            { key: 'Battery Life', value: '40 Hours Playtime' },
+            { key: 'Connectivity', value: 'Bluetooth 5.3, 3.5mm Aux Cable' },
+            { key: 'Materials', value: 'FSC-Certified Walnut, Recycled Aluminum, Vegan Leather' }
+        ],
+        image: {
+            thumbnail: 'assets/images/prod-05-headphones-thumb.jpg',
+            gallery: [
+                'assets/images/prod-05-headphones-gallery-1.jpg',
+                'assets/images/prod-05-headphones-gallery-2.jpg',
+                'assets/images/prod-05-headphones-gallery-3.jpg'
+            ]
+        }
+    },
+    {
+        id: 'green-cwwomp-002',
+        name: 'Bamboo Ergonomic Keyboard & Mouse',
+        price: 89.99,
+        originalPrice: 99.99,
+        category: 'computing',
+        stockStatus: 'in-stock',
+        avgRating: 4.4,
+        shortDescription: 'A beautiful, eco-friendly upgrade for your workspace.',
+        description: `Redefine your desk with this stunning keyboard and mouse set, crafted from solid, carbonized bamboo. The keyboard features quiet, responsive scissor-switch keys, while the ergonomic mouse fits comfortably in your hand. Both devices connect via a single USB dongle for a clean, wireless setup.`,
+        specifications: [
+            { key: 'Material', value: '100% Natural Moso Bamboo' },
+            { key: 'Connectivity', value: '2.4GHz Wireless (Single Dongle)' },
+            { key: 'Keyboard Layout', value: 'Full-size with Numpad' },
+            { key: 'Compatibility', value: 'Windows, macOS, Linux' }
+        ],
+        image: {
+            thumbnail: 'assets/images/prod-06-keyboard-thumb.jpg',
+            gallery: [
+                'assets/images/prod-06-keyboard-gallery-1.jpg',
+                'assets/images/prod-06-keyboard-gallery-2.jpg'
+            ]
+        }
+    },
+    {
+        id: 'eco-elwwwec-003',
+        name: 'Smart-Leaf Indoor Garden',
+        price: 249.00,
+        originalPrice: 299.00,
+        category: 'electronics',
+        stockStatus: 'out-of-stock',
+        avgRating: 4.8,
+        shortDescription: 'Grow fresh herbs and greens year-round, effortlessly.',
+        description: `Bring the joy of gardening indoors with the Smart-Leaf system. This self-contained unit uses energy-efficient, full-spectrum LED lighting and a self-watering system to create the perfect environment for your plants. Grow anything from basil and mint to cherry tomatoes, right on your countertop.`,
+        specifications: [
+            { key: 'Capacity', value: '9 Plant Pods' },
+            { key: 'Lighting', value: '24W Full-Spectrum LED' },
+            { key: 'Water Reservoir', value: '4 Liters' },
+            { key: 'Features', value: 'Automatic Light Timer, Water Level Sensor' }
+        ],
+        image: {
+            thumbnail: 'assets/images/prod-07-garden-thumb.jpg',
+            gallery: [
+                'assets/images/prod-07-garden-gallery-1.jpg',
+                'assets/images/prod-07-garden-gallery-2.jpg'
+            ]
+        }
+    },
+    {
+        id: 'audiwwo-003',
+        name: 'Drift Recycled Fabric Earbuds',
+        price: 79.99,
+        originalPrice: 99.99,
+        category: 'audio',
+        stockStatus: 'low-stock',
+        avgRating: 4.3,
+        shortDescription: 'Compact true wireless earbuds with a unique, tactile finish.',
+        description: `Stand out from the crowd with the Drift True Wireless Earbuds. The charging case is wrapped in a durable, attractive fabric made from 100% recycled plastic bottles. The earbuds themselves offer a snug fit, IPX5 water resistance, and deliver clear, balanced sound for music and calls.`,
+        specifications: [
+            { key: 'Battery Life', value: '6 Hours (Earbuds) + 24 Hours (Case)' },
+            { key: 'Water Resistance', value: 'IPX5' },
+            { key: 'Connectivity', value: 'Bluetooth 5.2' },
+            { key: 'Materials', value: 'Recycled Plastic Fabric, Recycled ABS' }
+        ],
+        image: {
+            thumbnail: 'assets/images/prod-08-earbuds-thumb.jpg',
+            gallery: [
+                'assets/images/prod-08-earbuds-gallery-1.jpg',
+                'assets/images/prod-08-earbuds-gallery-2.jpg'
+            ]
+        }
+    }
 ];
 
 
@@ -103,7 +224,7 @@ const products = [
 const reviews = [
     {
         id: 101,
-        productId: 'eco-elec-001', // Links to the Aura Case
+        productId: 'audio-002112', // Links to the Aura Case
         rating: 5,
         title: 'Stylish and Sustainable!',
         author: 'Jessica L.',
@@ -113,7 +234,7 @@ const reviews = [
     },
     {
         id: 102,
-        productId: 'eco-elec-001',
+        productId: 'audiwwo-003',
         rating: 4,
         title: 'Great case, slightly slippery.',
         author: 'Mark T.',
@@ -123,7 +244,7 @@ const reviews = [
     },
     {
         id: 103,
-        productId: 'green-comp-001', // Links to the TerraBook Pro
+        productId: 'green-comp-00a2', // Links to the TerraBook Pro
         rating: 5,
         title: 'This machine is a powerhouse!',
         author: 'David Chen',
@@ -133,7 +254,7 @@ const reviews = [
     },
     {
         id: 104,
-        productId: 'audio-001', // Links to the SonosGrove Speaker
+        productId: 'green-comp-00a2', // Links to the SonosGrove Speaker
         rating: 5,
         title: 'Amazing Sound and Design',
         author: 'Emily Rose',
@@ -143,7 +264,7 @@ const reviews = [
     },
     {
         id: 105,
-        productId: 'audio-001',
+        productId: 'green-comp-00a2',
         rating: 4,
         title: 'Excellent sound, average battery.',
         author: 'Ben Carter',

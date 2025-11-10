@@ -766,6 +766,8 @@
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
+    margin-top: 90px;
+    
 }
 .review-success-message h4 {
     margin: 0 0 0.5rem 0;

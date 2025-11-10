@@ -384,6 +384,7 @@ body {
 }
 
 .newsletter-btn {
+  margin-top: 10px;
   background-color: var(--primary-color);
   color: #ffffff;
   border: none;
